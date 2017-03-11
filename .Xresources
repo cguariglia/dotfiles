@@ -1,0 +1,68 @@
+!ROFS
+#define COLOR_ROFI_BACKGROUND           #282828
+#define COLOR_ROFI_BACKGROUND_ALT       COLOR_ROFI_BACKGROUND
+#define COLOR_ROFI_FOREGROUND           #ffffff
+#define COLOR_ROFI_HIGHLIGHT_BACKGROUND #dd2266
+#define COLOR_ROFI_HIGHLIGHT_FOREGROUND #ffffff
+#define COLOR_ROFI_WINDOW               COLOR_ROFI_BACKGROUND
+#define COLOR_ROFI_WINDOW_BORDER        COLOR_ROFI_HIGHLIGHT_BACKGROUND
+#define COLOR_ROFI_ACTIVE               COLOR_ROFI_HIGHLIGHT_BACKGROUND
+
+
+rofi.color-enabled: true
+! Color scheme for normal row        bg      fg      bgalt   hlbg    hlfg
+rofi.color-normal:                   COLOR_ROFI_BACKGROUND, COLOR_ROFI_FOREGROUND, COLOR_ROFI_BACKGROUND_ALT, COLOR_ROFI_HIGHLIGHT_BACKGROUND, COLOR_ROFI_HIGHLIGHT_FOREGROUND
+! Color scheme for urgent row
+rofi.color-urgent:                   #fdf6e3,#dc322f,#eee8d5,#ff0000,#fdf6e3
+! Color scheme for active row
+rofi.color-active:                   COLOR_ROFI_BACKGROUND, COLOR_ROFI_HIGHLIGHT_FOREGROUND, COLOR_ROFI_BACKGROUND_ALT, COLOR_ROFI_ACTIVE, COLOR_ROFI_HIGHLIGHT_FOREGROUND
+! Color scheme window                window  border
+rofi.color-window:                   COLOR_ROFI_WINDOW, COLOR_ROFI_WINDOW_BORDER
+! Location on screen
+rofi.location: 0
+rofi.terminal: urxvtc
+rofi.separator-style:				 solid
+rofi.opacity:                        95
+rofi.width:                          46
+rofi.fake-background:		     screenshot
+rofi.font: dejavu sans mono 12
+! special
+*.foreground:   #ffffff
+*.background:   #222222
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #f841ab
+*.color8:       #7b4473
+
+! red
+*.color1:       #720d47
+*.color9:       #b5e2e3
+
+! green
+*.color2:       #ff58ca
+*.color10:      #e17ab3
+
+! yellow
+*.color3:       #ff76df
+*.color11:      #f62d8d
+
+! blue
+*.color4:       #d4195e
+*.color12:      #ef669e
+
+! magenta
+*.color5:       #785a98
+*.color13:      #a52f62
+
+! cyan
+*.color6:       #ed2170
+*.color14:      #cf3e75
+
+! white
+*.color7:       #a50f4a
+*.color15:      #ff0076
+
+URxvt.clipboard.autocopy: True
+URxvt.scrollBar: False
+*.font: xft:inconsolata:size=12
