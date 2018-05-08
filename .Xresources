@@ -13,11 +13,11 @@ rofi.color-enabled: true
 ! Color scheme for normal row        bg      fg      bgalt   hlbg    hlfg
 rofi.color-normal:                   COLOR_ROFI_BACKGROUND, COLOR_ROFI_FOREGROUND, COLOR_ROFI_BACKGROUND_ALT, COLOR_ROFI_HIGHLIGHT_BACKGROUND, COLOR_ROFI_HIGHLIGHT_FOREGROUND
 ! Color scheme for urgent row
-rofi.color-urgent:                   #fdf6e3,#dc322f,#eee8d5,#ff0000,#fdf6e3
+!rofi.color-urgent:                   #fdf6e3,#dc322f,#eee8d5,#ff0000,#fdf6e3
 ! Color scheme for active row
-rofi.color-active:                   COLOR_ROFI_BACKGROUND, COLOR_ROFI_HIGHLIGHT_FOREGROUND, COLOR_ROFI_BACKGROUND_ALT, COLOR_ROFI_ACTIVE, COLOR_ROFI_HIGHLIGHT_FOREGROUND
+!rofi.color-active:                   COLOR_ROFI_BACKGROUND, COLOR_ROFI_HIGHLIGHT_FOREGROUND, COLOR_ROFI_BACKGROUND_ALT, COLOR_ROFI_ACTIVE, COLOR_ROFI_HIGHLIGHT_FOREGROUND
 ! Color scheme window                window  border
-rofi.color-window:                   COLOR_ROFI_WINDOW, COLOR_ROFI_WINDOW_BORDER
+!rofi.color-window:                   COLOR_ROFI_WINDOW, COLOR_ROFI_WINDOW_BORDER
 ! Location on screen
 rofi.location: 0
 rofi.terminal: urxvtc
@@ -26,6 +26,14 @@ rofi.opacity:                        95
 rofi.width:                          46
 rofi.fake-background:		     screenshot
 rofi.font: dejavu sans mono 12
+
+!spoopy
+! Property Name     BG       Border   Separator
+rofi.color-window:  #282828, #282828, #181818
+!stillspoopy
+! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
+rofi.color-normal: #282828, #d8d8d8, #282828, #282828, #7cafc2
+
 ! special
 *.foreground:   #ffffff
 *.background:   #222222
@@ -63,6 +71,17 @@ rofi.font: dejavu sans mono 12
 *.color7:       #a50f4a
 *.color15:      #ff0076
 
+! enable hints
+Xft.hinting: true
+Xft.hintstyle: hintslight
+
 URxvt.clipboard.autocopy: True
 URxvt.scrollBar: False
 *.font: xft:inconsolata:size=12
+
+! making ctrl-shift-c work
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.perl-ext-common: default,clipboard
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste

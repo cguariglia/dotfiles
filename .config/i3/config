@@ -9,8 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-bindsym $mod+g gaps inner all set 12, gaps outer all set 3, exec compton
-bindsym $mod+Shift+g gaps inner all set 0, gaps outer all set 0, exec killall compton
+bindsym $mod+g gaps inner all set 20, gaps outer all set 14, exec ~/.config/polybar/gapslaunch.sh
+bindsym $mod+Shift+g gaps inner all set 0, gaps outer all set 0, exec ~/.config/polybar/launch.sh
 
 set $mod Mod4
 
@@ -35,7 +35,7 @@ for_window [class="^.*"] border pixel 1
 floating_modifier $mod
 
 #locks shit
-bindsym $mod+l exec lock --t " "
+bindsym $mod+l exec ~/scripts/lock.sh
 
 # start a terminal
 bindsym $mod+Return exec urxvt
@@ -45,7 +45,7 @@ bindsym $mod+Shift+q kill
 
 # alt-tab magic
 bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tap workspace prev
+bindsym $mod+Shift+Tab workspace prev
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec "rofi -show run"
@@ -164,10 +164,49 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# change wallpaper + colorscheme automagically
+bindsym $mod+Shift+w exec wal -i ~/wallpapers & exec ~/.config/polybar/launch.sh
+
+# change gaps easily
+bindsym $mod+Shift+plus   gaps outer all plus 5
+bindsym $mod+Shift+minus  gaps outer all minus 5
+bindsym $mod+Shift+Escape gaps outer all set 14
+
+
+bindsym $mod+plus   gaps inner all plus 5
+bindsym $mod+minus  gaps inner all minus 5
+bindsym $mod+Escape gaps inner all set 20
+
+# so I don't have to open rofi all the time
+bindsym $mod+f exec firefox
+bindsym $mod+Shift+f exec pcmanfm
+bindsym $mod+y exec geany
+
+# easier screenshots!
+bindsym $mod+Print  exec --no-startup-id scrot 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv ~/screenshots'
+bindsym $mod+Shift+Print exec --no-startup-id flameshot gui
+
+# actual keyboard backlights!
+bindsym XF86KbdBrightnessUp      exec --no-startup-id /usr/local/bin/kb-light.py +
+bindsym XF86KbdBrightnessDown    exec --no-startup-id /usr/local/bin/kb-light.py -
+
+# actual actual backlights!
+bindsym XF86MonBrightnessUp      exec --no-startup-id light -A 5
+bindsym XF86MonBrightnessDown    exec --no-startup-id light -U 5
+
+# volume controls 
+bindsym XF86AudioLowerVolume     exec --no-startup-id /usr/bin/amixer -q sset Master 5%-
+bindsym XF86AudioRaiseVolume     exec --no-startup-id /usr/bin/amixer -q sset Master 5%+
+bindsym XF86AudioMute            exec --no-startup-id /usr/bin/amixer -q sset Master toggle
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
 #        status_command lemonbar
 #}
 
-exec ~/scripts/lbar-launcher
+exec compton
+exec flameshot
+exec wal -i ~/wallpapers/librarycomfy.png
+exec ~/.config/polybar/launch.sh
+
