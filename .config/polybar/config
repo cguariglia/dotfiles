@@ -8,7 +8,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = ${xrdb:*.background}
+background = #262626
 background-alt = ${xrdb:*.color0}
 background-unf = ${xrdb:*.color8}
 background-mod0 = ${xrdb:*.color5}
@@ -17,8 +17,8 @@ background-mod2 = ${xrdb:*.color4}
 background-alrt = ${xrdb:*.color3}
 
 ;foreground = ${xrdb:color7:#222}
-foreground = ${xrdb:*.foreground}
-foreground-alt = ${xrdb:*.color7}
+foreground = #f2f2f2
+foreground-alt = ${xrdb:*.foreground}
 primary = ${xrdb:*.color2}
 secondary = ${xrdb:*.color6}
 
@@ -87,8 +87,11 @@ width = 80%
 ;height = 30
 height = ${sizes.bar-height}
 offset-x = 10%
-offset-y = 14%
+offset-y = 10
 radius = 7.0
+
+wm-restack = i3
+override-redirect = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -117,7 +120,6 @@ tray-background  = ${colors.background}
 tray-scale = 1.0
 
 ;wm-restack = bspwm
-wm-restack = i3
 
 dim-value = 1.0
 

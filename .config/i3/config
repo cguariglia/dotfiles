@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-bindsym $mod+g gaps inner all set 20, gaps outer all set 14, exec ~/.config/polybar/gapslaunch.sh
+bindsym $mod+g gaps inner all set 20, gaps outer all set 40, exec ~/.config/polybar/gapslaunch.sh
 bindsym $mod+Shift+g gaps inner all set 0, gaps outer all set 0, exec ~/.config/polybar/launch.sh
 
 set $mod Mod4
@@ -35,7 +35,7 @@ for_window [class="^.*"] border pixel 1
 floating_modifier $mod
 
 #locks shit
-bindsym $mod+l exec ~/scripts/lock.sh
+bindsym $mod+l exec ~/scripts/lock2019.sh
 
 # start a terminal
 bindsym $mod+Return exec urxvt
@@ -88,8 +88,8 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-#bindsym $mod+f fullscreen toggle
-
+bindsym $mod+Shift+f fullscreen toggle
+ 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -165,7 +165,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # change wallpaper + colorscheme automagically
-bindsym $mod+Shift+w exec wal -i ~/wallpapers & exec ~/.config/polybar/launch.sh
+bindsym $mod+Shift+w exec wal -i ~/wallpapers/other
 
 # change gaps easily
 bindsym $mod+Shift+plus   gaps outer all plus 5
@@ -179,7 +179,7 @@ bindsym $mod+Escape gaps inner all set 20
 
 # so I don't have to open rofi all the time
 bindsym $mod+f exec firefox
-bindsym $mod+Shift+f exec pcmanfm
+#bindsym $mod+Shift+f exec pcmanfm
 bindsym $mod+y exec geany
 
 # easier screenshots!

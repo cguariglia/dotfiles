@@ -62,6 +62,7 @@ alias explore='pcmanfm . &'
 alias suexplore='sudo pcmanfm . &'
 alias scrot='scrot ~/screenshots/%b-%d-%H%M%S.png'
 alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -console -dxlevel 90 -width 1280 -height 1024 >/dev/null 2>&1 &'
+export LD_LIBRARY_PATH="/usr/local/lib"
 
 if [ "`id -u`" -eq 0 ]; then
     PS1="\[\033[m\]\[\e[9;33m\]\u\[\e[9;36m\]\[\033[m\]@\[\e[9;35;40\]\h\[\033[m\]:\[\e[0m\]\[\e[1;32m\][\W] >> \[\e[0m\]"
@@ -69,7 +70,8 @@ else
     PS1="\[\033[m\]\[\e[1m\]\u\[\e[1;36m\]\[\033[m\]@\[\e[1;36m\]\h\[\033[m\]:\[\e[0m\]\[\e[1;32m\][\W] >> \[\e[0m\]"
 fi
 
-export PATH="$HOME/.mongodb/versions/mongodb-current/bin:$PATH"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export PATH="$HOME/.mongodb/versions/mongodb-current/bin:$PATH"
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#source /usr/share/nvm/init-nvm.sh

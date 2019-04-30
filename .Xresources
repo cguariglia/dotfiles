@@ -77,7 +77,7 @@ Xft.hintstyle: hintslight
 
 URxvt.clipboard.autocopy: True
 URxvt.scrollBar: False
-*.font: xft:inconsolata:size=12
+*.font: xft:inconsolata:size=13
 
 ! making ctrl-shift-c work
 URxvt.iso14755: false
